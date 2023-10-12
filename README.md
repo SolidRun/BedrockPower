@@ -48,24 +48,6 @@ However, some settings could get overwritten by power management features of you
 
 We did provide some examples for automation. And these require configuration during installation.
 
-### Windows Installation
-
-Before you start installing anything, it is highly recommended getting familiar with RyzenAdj to find out what can be done on your device.
-Use the CLI `ryzenadj.exe` to test the support of your device and to benchmark the effects of each setting.
-If your values don't stay persistent you may want to consider installing our example script for automation.
-
-1. Prepare your favorite RyzenAdj arguments
-1. Copy the content of your RyzenAdj folder to the final destination
-1. Put your configuration into `readjustService.ps1` and test it as administrator until everything works as expected
-1. Install `readjustService.ps1` as Task for Windows Task Scheduler by running `installServiceTask.bat`
-
-Deinstallation of the Task can be done via `uninstallServiceTask.bat`
-
-Over Windows Task Scheduler you can check if it is running. It is called `RyzenAdj` below `AMD` folder.
-Or just run
-
-    SCHTASKS /query /TN "AMD\RyzenAdj"
-
 ### Linux Installation
     Because it is very easy to build the latest version of bedrockpower on Linux, we don't provide precompiled packages for distributions.
     Just follow the build instructions below and you are ready to use it.
@@ -100,12 +82,5 @@ The simplest way to build it:
     if [ -d "~/.bin" ]; then ln -s bedrockpower ~/.bin/bedrockpower && echo "symlinked to ~/.bin/bedrockpower"
 
 ### Windows
+We recommend to use the [Universal x86 Tuning Utility](https://github.com/JamesCJ60/Universal-x86-Tuning-Utility).
 
-It can be built by Visual Studio + MSVC automaticaly, or Clang + Nmake in command line.
-However, as for now, MingW-gcc can't be used to compile for some reason.
-
-Required dll is included in ./win32 of source tree. Please put the dll
-library and sys driver in the same folder with ryzenadj.exe.
-
-We don't recommend you to build by yourself on Windows since the environment configuarion
-is very complicated. If you would like to use ryzenadj functions in your program, see libryzenadj.

@@ -2,7 +2,7 @@
 CMAKE_MINIMUM_REQUIRED(VERSION 3.0)
 
 #define project name
-PROJECT(ryzenadj)
+PROJECT(bedrockpower)
 
 set(CMAKE_CXX_STANDARD 11)
 

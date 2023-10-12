@@ -90,14 +90,14 @@ On Fedora:
 
 The simplest way to build it:
 
-    git clone https://github.com/FlyGoat/RyzenAdj.git
-    cd RyzenAdj
+    git clone https://github.com/SolidRun/BedrockPower.git
+    cd BedrockPower
     rm -r win32
     mkdir build && cd build
     cmake -DCMAKE_BUILD_TYPE=Release ..
     make
-    if [ -d "~/.local/bin" ]; then ln -s ryzenadj ~/.local/bin/ryzenadj && echo "symlinked to ~/.local/bin/ryzenadj"
-    if [ -d "~/.bin" ]; then ln -s ryzenadj ~/.bin/ryzenadj && echo "symlinked to ~/.bin/ryzenadj"
+    if [ -d "~/.local/bin" ]; then ln -s bedrockpower ~/.local/bin/bedrockpower && echo "symlinked to ~/.local/bin/bedrockpower"
+    if [ -d "~/.bin" ]; then ln -s bedrockpower ~/.bin/bedrockpower && echo "symlinked to ~/.bin/bedrockpower"
 
 ### Windows
 

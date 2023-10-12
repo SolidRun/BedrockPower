@@ -1,5 +1,5 @@
-# RyzenAdj
-Adjust power management settings for Ryzen Mobile Processors.
+# BedrockPower
+Adjust power management settings for SolidRun Bedrock.
 
 
 Based on: [FlyGoat/ryzen_nb_smu](https://github.com/flygoat/ryzen_nb_smu) & [FlyGoat/ryzenAdj](https://github.com/FlyGoat/RyzenAdj.git)
@@ -14,8 +14,8 @@ You should run it with Administrator on Windows or root on Linux.
 You can write a shell script or bat to do it automaticly.
 
 ```
-$./ryzenadj -h
-Usage: ryzenadj [options]
+$./bedrockpower -h
+Usage: bedrockpower [options]
 
  Ryzen Power Management adjust tool.
 
@@ -34,7 +34,7 @@ Settings
 ### Demo
 Example to set the cpu Power Limit to 45W, and Tctl to 90 °C:
 
-    ./ryzenadj --power_limit=45 --tctl-temp=90
+    ./bedrockpower --power_limit=45 --tctl-temp=90
 
 ### Documentation
 - [Supported Models (from original repository)](https://github.com/FlyGoat/RyzenAdj/wiki/Supported-Models)
@@ -43,7 +43,7 @@ Example to set the cpu Power Limit to 45W, and Tctl to 90 °C:
 
 ## Installation
 
-You don't need to install RyzenAdj because it does not need configuration, everything is set via arguments
+You don't need to install bedrockpower because it does not need configuration, everything is set via arguments
 However, some settings could get overwritten by power management features of your device, and you need to regularly set your values again.
 
 We did provide some examples for automation. And these require configuration during installation.
@@ -67,7 +67,7 @@ Or just run
     SCHTASKS /query /TN "AMD\RyzenAdj"
 
 ### Linux Installation
-    Because it is very easy to build the latest version of RyzenAdj on Linux, we don't provide precompiled packages for distributions.
+    Because it is very easy to build the latest version of bedrockpower on Linux, we don't provide precompiled packages for distributions.
     Just follow the build instructions below and you are ready to use it.
 
 ## Build

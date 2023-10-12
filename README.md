@@ -27,48 +27,20 @@ Options
     --dump-table                          Show whole power metric table before and after adjustment
 
 Settings
-    -a, --stapm-limit=<u32>               Sustained Power Limit         - STAPM LIMIT (mW)
-    -b, --fast-limit=<u32>                Actual Power Limit            - PPT LIMIT FAST (mW)
-    -c, --slow-limit=<u32>                Average Power Limit           - PPT LIMIT SLOW (mW)
-    -d, --slow-time=<u32>                 Slow PPT Constant Time (s)
-    -e, --stapm-time=<u32>                STAPM constant time (s)
-    -f, --tctl-temp=<u32>                 Tctl Temperature Limit (degree C)
-    -g, --vrm-current=<u32>               VRM Current Limit             - TDC LIMIT VDD (mA)
-    -j, --vrmsoc-current=<u32>            VRM SoC Current Limit         - TDC LIMIT SoC (mA)
-    -k, --vrmmax-current=<u32>            VRM Maximum Current Limit     - EDC LIMIT VDD (mA)
-    -l, --vrmsocmax-current=<u32>         VRM SoC Maximum Current Limit - EDC LIMIT SoC (mA)
-    -m, --psi0-current=<u32>              PSI0 VDD Current Limit (mA)
-    -n, --psi0soc-current=<u32>           PSI0 SoC Current Limit (mA)
-    -o, --max-socclk-frequency=<u32>      Maximum SoC Clock Frequency (MHz)
-    -p, --min-socclk-frequency=<u32>      Minimum SoC Clock Frequency (MHz)
-    -q, --max-fclk-frequency=<u32>        Maximum Transmission (CPU-GPU) Frequency (MHz)
-    -r, --min-fclk-frequency=<u32>        Minimum Transmission (CPU-GPU) Frequency (MHz)
-    -s, --max-vcn=<u32>                   Maximum Video Core Next (VCE - Video Coding Engine) (MHz)
-    -t, --min-vcn=<u32>                   Minimum Video Core Next (VCE - Video Coding Engine) (MHz)
-    -u, --max-lclk=<u32>                  Maximum Data Launch Clock (MHz)
-    -v, --min-lclk=<u32>                  Minimum Data Launch Clock (MHz)
-    -w, --max-gfxclk=<u32>                Maximum GFX Clock (MHz)
-    -x, --min-gfxclk=<u32>                Minimum GFX Clock (MHz)
-    -y, --prochot-deassertion-ramp=<u32>  Ramp Time After Prochot is Deasserted: limit power based on value, higher values does apply tighter limits after prochot is over
-    --apu-skin-temp=<u32>                 APU Skin Temperature Limit    - STT LIMIT APU (degree C)
-    --dgpu-skin-temp=<u32>                dGPU Skin Temperature Limit   - STT LIMIT dGPU (degree C)
-    --apu-slow-limit=<u32>                APU PPT Slow Power limit for A+A dGPU platform - PPT LIMIT APU (mW)
-    --skin-temp-limit=<u32>               Skin Temperature Power Limit (mW)
+    --power_limit=<u32>       Set system power limit (W) (value between 8 and 54)
     --power-saving                        Hidden options to improve power efficiency (is set when AC unplugged): behavior depends on CPU generation, Device and Manufacture
     --max-performance                     Hidden options to improve performance (is set when AC plugged in): behavior depends on CPU generation, Device and Manufacture
 ```
 
 ### Demo
-Example to set the cpu Power Limit to 45W, and Tctl to 90 °C,
-then the command line should be:
+Example to set the cpu Power Limit to 45W, and Tctl to 90 °C:
 
-    ./ryzenadj --stapm-limit=45000 --fast-limit=45000 --slow-limit=45000 --tctl-temp=90
+    ./ryzenadj --power_limit=45 --tctl-temp=90
 
 ### Documentation
-- [Supported Models](https://github.com/FlyGoat/RyzenAdj/wiki/Supported-Models)
-- [Renoir Tuning Guide](https://github.com/FlyGoat/RyzenAdj/wiki/Renoir-Tuning-Guide)
+- [Supported Models (from original repository)](https://github.com/FlyGoat/RyzenAdj/wiki/Supported-Models)
 - [Options](https://github.com/FlyGoat/RyzenAdj/wiki/Options)
-- [FAQ](https://github.com/FlyGoat/RyzenAdj/wiki/FAQ)
+- [FAQ (from original repository)](https://github.com/FlyGoat/RyzenAdj/wiki/FAQ)
 
 ## Installation
 
@@ -76,11 +48,6 @@ You don't need to install RyzenAdj because it does not need configuration, every
 However, some settings could get overwritten by power management features of your device, and you need to regularly set your values again.
 
 We did provide some examples for automation. And these require configuration during installation.
-
-### Linux Installation
-
-Because it is very easy to build the latest version of RyzenAdj on Linux, we don't provide precompiled packages for distributions.
-Just follow the build instructions below and you are ready to use it.
 
 ### Windows Installation
 
@@ -100,6 +67,10 @@ Or just run
 
     SCHTASKS /query /TN "AMD\RyzenAdj"
 
+### Linux Installation
+    Because it is very easy to build the latest version of RyzenAdj on Linux, we don't provide precompiled packages for distributions.
+    Just follow the build instructions below and you are ready to use it.
+
 ## Build
 
 ### Build Requirements
@@ -109,7 +80,6 @@ requires privileged access to NB PCI config space, in order to compile it
 one must have pcilib library & headers available.
 
 ### Linux
-
 Please make sure that you have libpci dependency before compiling. On
 Debian-based distros this is covered by installing **pcilib-dev** package:
 
@@ -118,8 +88,6 @@ Debian-based distros this is covered by installing **pcilib-dev** package:
 On Fedora:
 
     sudo dnf install pciutils-devel
-
-If your Distribution is not supported, try finding the packages or use [Distrobox](https://github.com/89luca89/distrobox) or [Toolbox](https://docs.fedoraproject.org/en-US/fedora-silverblue/toolbox/) instead.
 
 The simplest way to build it:
 

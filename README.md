@@ -17,7 +17,7 @@ You can write a shell script or bat to do it automaticly.
 $./bedrockpower -h
 Usage: bedrockpower [options]
 
- Ryzen Power Management adjust tool.
+ Bedrock Power Management adjust tool.
 
     -h, --help                            show this help message and exit
 

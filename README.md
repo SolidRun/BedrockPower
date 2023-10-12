@@ -4,8 +4,6 @@ Adjust power management settings for SolidRun Bedrock.
 
 Based on: [FlyGoat/ryzen_nb_smu](https://github.com/flygoat/ryzen_nb_smu) & [FlyGoat/ryzenAdj](https://github.com/FlyGoat/RyzenAdj.git)
 
-RyzenAdjUI_WPF by "JustSkill" is no longer maintained, for GUI please see  [Universal x86 Tuning Utility](https://github.com/JamesCJ60/Universal-x86-Tuning-Utility) or [ryzen-controller-team/ryzen-controller](https://gitlab.com/ryzen-controller-team/ryzen-controller/).
-
 ## Usage
 The command line interface is identical on both Windows and Unix-Like OS.
 

@@ -56,10 +56,10 @@ Settings
     --skin-temp-limit=<u32>               Skin Temperature Power Limit (mW)
     --power-saving                        Hidden options to improve power efficiency (is set when AC unplugged): behavior depends on CPU generation, Device and Manufacture
     --max-performance                     Hidden options to improve performance (is set when AC plugged in): behavior depends on CPU generation, Device and Manufacture
-``` 
+```
 
 ### Demo
-If I'm going to set all the Power Limit to 45W, and Tctl to 90 °C,
+Example to set the cpu Power Limit to 45W, and Tctl to 90 °C,
 then the command line should be:
 
     ./ryzenadj --stapm-limit=45000 --fast-limit=45000 --slow-limit=45000 --tctl-temp=90

@@ -10,7 +10,7 @@ extern "C" {
 
 #define RYZENADJ_REVISION_VER 0
 #define RYZENADJ_MAJOR_VER 14
-#define RYZENADJ_MINIOR_VER 0
+#define RYZENADJ_MINIOR_VER 2
 
 enum ryzen_family {
         WAIT_FOR_LOAD = -2,
@@ -57,6 +57,8 @@ struct _ryzen_access;
 #define ADJ_ERR_SMU_UNSUPPORTED      -3
 #define ADJ_ERR_SMU_REJECTED         -4
 #define ADJ_ERR_MEMORY_ACCESS        -5
+
+#define WATT_TO_MILLIWATT(w) ((w) * 1000.0)
 
 typedef struct _ryzen_access *ryzen_access;
 

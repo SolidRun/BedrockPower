@@ -940,7 +940,7 @@ EXP int CALL set_dgpu_skin_temp_limit(ryzen_access ry, uint32_t value) {
 	case FAM_REMBRANDT:
 	case FAM_MENDOCINO:
 	case FAM_PHOENIX:
-		_do_adjust(0x34);
+		_do_adjust(0x34);  // in UXTU its: ("slow-limit", false, 0x34) but there are two slow limits, 0x34 and 0x33
 		break;
 	}
 	return err;
@@ -958,7 +958,7 @@ EXP int CALL set_apu_slow_limit(ryzen_access ry, uint32_t value) {
 		break;
 	case FAM_REMBRANDT:
 	case FAM_PHOENIX:
-		_do_adjust(0x23);
+		_do_adjust(0x23); // not present in UXTU
 		break;
 	}
 	return err;
@@ -978,7 +978,7 @@ EXP int CALL set_skin_temp_power_limit(ryzen_access ry, uint32_t value) {
 	case FAM_REMBRANDT:
 	case FAM_MENDOCINO:
 	case FAM_PHOENIX:
-		_do_adjust(0x4a);
+		_do_adjust(0x4a); // not present in UXTU
 		break;
 	}
 	return err;
@@ -1059,6 +1059,7 @@ EXP int CALL set_oc_clk(ryzen_access ry, uint32_t value) {
 	case FAM_RENOIR:
 	case FAM_CEZANNE:
 	case FAM_REMBRANDT:
+	case FAM_PHOENIX:
 		_do_adjust(0x31);
         if (err) {
             printf("%s: Retry with PSMU\n", __func__);
@@ -1077,7 +1078,7 @@ EXP int CALL set_per_core_oc_clk(ryzen_access ry, uint32_t value) {
 	case FAM_LUCIENNE:
 	case FAM_RENOIR:
 	case FAM_CEZANNE:
-	case FAM_REMBRANDT:
+	case FAM_REMBRANDT: // no PHOENIX
 		_do_adjust(0x32);
         if (err) {
             printf("%s: Retry with PSMU\n", __func__);
@@ -1096,8 +1097,8 @@ EXP int CALL set_oc_volt(ryzen_access ry, uint32_t value) {
 	case FAM_LUCIENNE:
 	case FAM_RENOIR:
 	case FAM_CEZANNE:
-	case FAM_REMBRANDT:
-		_do_adjust(0x33);
+	case FAM_REMBRANDT: // no PHOENIX
+		_do_adjust(0x33); // no match with UXTU
         if (err) {
             printf("%s: Retry with PSMU\n", __func__);
 		    _do_adjust_psmu(0x1b);
@@ -1122,8 +1123,8 @@ EXP int CALL set_disable_oc(ryzen_access ry) {
 		    _do_adjust_psmu(0x1d);
         }
 		break;
-	case FAM_REMBRANDT:
-		_do_adjust_psmu(0x18);
+	case FAM_REMBRANDT: // no PHOENIX
+		_do_adjust_psmu(0x18); // doesnt match with UXTU
 		break;
 	}
 	return err;
@@ -1140,8 +1141,8 @@ EXP int CALL set_enable_oc(ryzen_access ry) {
 	case FAM_CEZANNE:
 		_do_adjust(0x2F);
 		break;
-	case FAM_REMBRANDT:
-		_do_adjust_psmu(0x17);
+	case FAM_REMBRANDT: // no PHOENIX
+		_do_adjust_psmu(0x17); // doesnt match with UXTU
 		break;
 	}
 	return err;

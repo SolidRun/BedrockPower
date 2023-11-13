@@ -80,6 +80,8 @@ static enum ryzen_family cpuid_load_family()
             return FAM_REMBRANDT;
         case 116:
             return FAM_PHOENIX;
+        case 120:
+            return FAM_PHOENIX2;
         default:
             printf("Fam%xh: unsupported model %d\n", family, model);
             break;

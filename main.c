@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: GPL-2.0
 /* Copyright (C) 2018-2019 Jiaxun Yang <jiaxun.yang@flygoat.com> */
 /* Copyright (C) 2023-2024 Lior Jigalo <lior.jigalo@solid-run.com> */
-/* Ryzen NB SMU Service Request Tool */
+/* BedrockPower Tool */
 
 #include <string.h>
 #include "lib/ryzenadj.h"
@@ -75,6 +75,7 @@ static const char *family_name(enum ryzen_family fam)
 	case FAM_VANGOGH: return "Vangogh";
 	case FAM_REMBRANDT: return "Rembrandt";
 	case FAM_PHOENIX: return "Phoenix";
+	case FAM_PHOENIX2: return "Phoenix2";
 	default:
 		break;
 	}

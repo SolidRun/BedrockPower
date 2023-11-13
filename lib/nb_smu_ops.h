@@ -39,7 +39,7 @@ enum SMU_TYPE{
 #define MP1_C2PMSG_RESPONSE_ADDR_1       0x3B10564
 #define MP1_C2PMSG_ARG_BASE_1            0x3B10998
 
-/* For Vangogh and Rembrandt */
+/* For Vangogh, Rembrandt, phoenix, phoenix2 */
 #define MP1_C2PMSG_MESSAGE_ADDR_2        0x3B10528
 #define MP1_C2PMSG_RESPONSE_ADDR_2       0x3B10578
 #define MP1_C2PMSG_ARG_BASE_2            0x3B10998

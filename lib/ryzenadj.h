@@ -1,7 +1,6 @@
 /* SPDX-License-Identifier: LGPL */
 /* Copyright (C) 2019 Jiaxun Yang <jiaxun.yang@flygoat.com> */
-/* Copyright (C) 2023-2024 Lior Jigalo <lior.jigalo@solid-run.com> */
-/* RyzenAdj API */
+/* BedrockPower API */
 
 #ifndef RYZENADJ_H
 #define RYZENADJ_H
@@ -26,6 +25,7 @@ enum ryzen_family {
         FAM_REMBRANDT,
         FAM_MENDOCINO,
         FAM_PHOENIX,
+        FAM_PHOENIX2,
         FAM_END
 };
 

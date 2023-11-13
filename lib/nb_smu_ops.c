@@ -52,7 +52,7 @@ int smu_service_test(smu_t smu)
 		printf("PCI Bus is not writeable, check secure boot\n");
 		return 0;
 	}
-	
+
 	/* Send message ID */
 	smn_reg_write(smu->nb, smu->msg, SMU_TEST_MSG);
 	/* Wait until reponse changed */
@@ -74,7 +74,7 @@ smu_t get_smu(nb_t nb, int smu_type) {
 	/* Fill SMU information */
 	switch(smu_type){
 		case TYPE_MP1:
-			if (family == FAM_REMBRANDT || family == FAM_VANGOGH || family == FAM_MENDOCINO || family == FAM_PHOENIX) {
+			if (family == FAM_REMBRANDT || family == FAM_VANGOGH || family == FAM_MENDOCINO || family == FAM_PHOENIX || family == FAM_PHOENIX2) {
 				smu->msg = MP1_C2PMSG_MESSAGE_ADDR_2;
 				smu->rep = MP1_C2PMSG_RESPONSE_ADDR_2;
 				smu->arg_base = MP1_C2PMSG_ARG_BASE_2;

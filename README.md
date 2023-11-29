@@ -38,24 +38,12 @@ Example to set the cpu Power Limit to 45W, and Tctl to 90 °C:
 - [Supported Models (from original repository)](https://github.com/FlyGoat/RyzenAdj/wiki/Supported-Models)
 - [Options](https://github.com/FlyGoat/RyzenAdj/wiki/Options)
 - [FAQ (from original repository)](https://github.com/FlyGoat/RyzenAdj/wiki/FAQ)
-
-## Installation
-
-You don't need to install bedrockpower because it does not need configuration, everything is set via arguments
-However, some settings could get overwritten by power management features of your device, and you need to regularly set your values again.
-
-We did provide some examples for automation. And these require configuration during installation.
-
-### Linux Installation
-    Because it is very easy to build the latest version of bedrockpower on Linux, we don't provide precompiled packages for distributions.
-    Just follow the build instructions below and you are ready to use it.
-
 ## Build
 
 ### Build Requirements
 
-Building this tool requires C & C++ compilers as well as **cmake**. It
-requires privileged access to NB PCI config space, in order to compile it
+Building this tool requires C & C++ compilers as well as **cmake**.\
+It requires privileged access to NB PCI config space, in order to compile it
 one must have pcilib library & headers available.
 
 ### Linux

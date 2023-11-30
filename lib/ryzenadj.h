@@ -10,7 +10,7 @@ extern "C" {
 
 #define RYZENADJ_REVISION_VER 0
 #define RYZENADJ_MAJOR_VER 14
-#define RYZENADJ_MINIOR_VER 2
+#define RYZENADJ_MINIOR_VER 3
 
 enum ryzen_family {
         WAIT_FOR_LOAD = -2,

@@ -12,21 +12,22 @@ You should run it with Administrator on Windows or root on Linux.
 You can write a shell script or bat to do it automaticly.
 
 ```
-$./bedrockpower -h
-Usage: bedrockpower [options]
+$ ./bedrockpower -h
+Usage: ryzenadj [options]
 
- Bedrock Power Management adjust tool.
+ Ryzen Power Management adjust tool.
 
-    -h, --help                            show this help message and exit
+    -h, --help                show this help message and exit
 
 Options
-    -i, --info                            Show information and most important power metrics after adjustment
-    --dump-table                          Show whole power metric table before and after adjustment
+    -i, --info                Show information and most important power metrics after adjustment
+    --dump-table              Show whole power metric table before and after adjustment
 
 Settings
-    --power_limit=<u32>       Set system power limit (W) (value between 8 and 54)
-    --power-saving                        Hidden options to improve power efficiency (is set when AC unplugged): behavior depends on CPU generation, Device and Manufacture
-    --max-performance                     Hidden options to improve performance (is set when AC plugged in): behavior depends on CPU generation, Device and Manufacture
+    -t, --tctl-temp=<u32>     Tctl Temperature Limit (degree C)
+    -s, --power-saving        Hidden options to improve power efficiency (is set when AC unplugged): behavior depends on CPU generation, Device and Manufacture
+    -p, --max-performance     Hidden options to improve performance (is set when AC plugged in): behavior depends on CPU generation, Device and Manufacture
+    -l, --power_limit=<u32>   Set system power limit (W) (value between 8 and 54)
 ```
 
 ### Demo

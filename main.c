@@ -74,8 +74,10 @@ static const char *family_name(enum ryzen_family fam)
 	case FAM_LUCIENNE: return "Lucienne";
 	case FAM_VANGOGH: return "Vangogh";
 	case FAM_REMBRANDT: return "Rembrandt";
-	case FAM_PHOENIX: return "Phoenix";
-	case FAM_PHOENIX2: return "Phoenix2";
+	case FAM_PHOENIX: return "Phoenix Point";
+	case FAM_PHOENIX2: return "Phoenix Point 2";
+	case FAM_HAWKPOINT: return "Hawk Point";
+	case FAM_STRIXPOINT: return "Strix Point";
 	default:
 		break;
 	}

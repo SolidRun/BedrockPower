@@ -10,7 +10,7 @@ extern "C" {
 
 #define RYZENADJ_REVISION_VER 0
 #define RYZENADJ_MAJOR_VER 14
-#define RYZENADJ_MINIOR_VER 3
+#define RYZENADJ_MINIOR_VER 4
 
 enum ryzen_family {
         WAIT_FOR_LOAD = -2,
@@ -26,6 +26,8 @@ enum ryzen_family {
         FAM_MENDOCINO,
         FAM_PHOENIX,
         FAM_PHOENIX2,
+        FAM_HAWKPOINT,
+        FAM_STRIXPOINT,
         FAM_END
 };
 
